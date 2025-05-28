@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Contacto | Dos que brillamos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - Dos que brillamos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf0;
+    }
+    .navbar {
+      background: #FFDD00;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-bottom: 3px solid #D90404;
+    }
+    .navbar .logo {
+      color: #D90404;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin-left: 1.5rem;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+    .navbar ul li a:hover {
+      color: #D90404;
+    }
+    .container {
+      padding: 2rem;
+    }
+    h1 {
+      color: #D90404;
+    }
+    form {
+      max-width: 500px;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 2px solid #D90404;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background: #D90404;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #a80000;
+    }
+    .datos {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    .datos p {
+      margin: 0.3rem 0;
+    }
+    @media (max-width: 600px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: #FFDD00;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 100%;
+      }
+      .navbar ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .menu-toggle span {
+        height: 3px;
+        width: 25px;
+        background: #000;
+        margin: 3px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Contacto</h1>
-  <p>Escribinos a <a href="mailto:tuemail@example.com">tuemail@example.com</a> o por <a href="https://wa.me/5490000000000">WhatsApp</a></p>
-  <a href="index.html">Volver al inicio</a>
+
+<nav class="navbar">
+  <div class="logo">Dos que brillamos</div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="tienda.html">Tienda</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="carrito.html">Carrito</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>¡Hablemos!</h1>
+  <p>Si querés hacernos una consulta, pedir un diseño personalizado o simplemente saludarnos, completá el formulario o escribinos por redes sociales.</p>
+
+  <form>
+    <input type="text" placeholder="Tu nombre" required>
+    <input type="email" placeholder="Tu correo electrónico" required>
+    <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+
+  <div class="datos">
+    <p>📧 Email: dosquebrillamos@gmail.com</p>
+    <p>📱 Instagram: @dosquebrillamos</p>
+    <p>📍 Quilmes, Buenos Aires</p>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>

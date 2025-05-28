@@ -2,31 +2,209 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dos que brillamos</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dos que brillamos - Inicio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff8c4;
+    }
+    .navbar {
+      background: #FFDD00;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-bottom: 3px solid #D90404;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      color: #D90404;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      margin-left: 1.5rem;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .navbar ul li a:hover {
+      color: #D90404;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #000;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: #FFDD00;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 100%;
+        border-top: 3px solid #D90404;
+      }
+      .navbar ul.show {
+        display: flex;
+      }
+      .navbar ul li {
+        margin: 1rem 0;
+        text-align: center;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background-image: url('https://via.placeholder.com/1200x400/FFDD00/000000?text=Dos+que+brillamos');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #D90404;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .bienvenida {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .bienvenida h2 {
+      color: #D90404;
+      margin-bottom: 1rem;
+    }
+
+    .bienvenida p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .productos-img {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .productos-img img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border: 2px solid #D90404;
+      border-radius: 10px;
+      padding: 0.5rem;
+      background: #fff;
+    }
+  </style>.sobre-nosotras {
+  background: #fff3c4;
+  padding: 2rem;
+  margin: 2rem;
+  border-top: 3px solid #D90404;
+  border-bottom: 3px solid #D90404;
+  text-align: center;
+}
+
+.sobre-nosotras h2 {
+  color: #D90404;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.sobre-nosotras p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+}
+
 </head>
 <body>
-  <header class="hero">
-    <h1>Dos que brillamos</h1>
-    <p>Productos personalizados con amor y chispa ✨</p>
-  </header>
 
-  <section class="productos">
-    <h2>Nuestros Productos</h2>
-    <div class="galeria">
-      <div class="tarjeta">
-        <img src="img/taza1.jpg" alt="Taza personalizada" />
-        <h3>Taza mágica</h3>
-        <button>¡Quiero este!</button>
-      </div>
-      <div class="tarjeta">
-        <img src="img/remera1.jpg" alt="Remera personalizada" />
-        <h3>Remera con diseño</h3>
-        <button>¡Me encanta!</button>
-      </div>
-    </div>
-  </section>
+<nav class="navbar">
+  <div class="logo">Dos que brillamos</div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="tienda.html">Tienda</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="carrito.html">Carrito</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  Dos que brillamos
+</div>
+
+<section class="bienvenida">
+  <h2>¡Bienvenidos!</h2>
+  <p>
+    Somos <strong>Dos que brillamos</strong>, un emprendimiento dedicado a crear productos sublimados llenos de color, amor y personalidad. Desde tazas hasta remeras, termos, lapiceras y más, ¡hacemos que cada objeto brille con vos!
+  </p>
+</section>
+
+<section class="productos-img">
+  <img src="https://cdn-icons-png.flaticon.com/512/819/819854.png" alt="Taza">
+  <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Remera">
+  <img src="https://cdn-icons-png.flaticon.com/512/3416/3416024.png" alt="Termo">
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Lapicera">
+  <img src="https://cdn-icons-png.flaticon.com/512/2543/2543970.png" alt="Cuaderno">
+</section><section class="sobre-nosotras">
+  <h2>¿Quiénes somos?</h2>
+  <p>Somos <strong>Dos que brillamos</strong>, un emprendimiento familiar hecho con amor y creatividad. Creamos productos personalizados como tazas, remeras, lapiceras, termos y más.</p>
+  <p>Trabajamos desde Quilmes y Ezpeleta, y cada pedido lo preparamos con mucho cariño para que te llegue con todo el brillo que merecés. ¡Gracias por acompañarnos!</p>
+</section>
+
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>
